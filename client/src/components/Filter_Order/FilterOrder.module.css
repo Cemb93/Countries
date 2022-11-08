@@ -1,0 +1,13 @@
+.div_principal {
+  display: flex;
+  border: solid 3px gray;
+  padding: 8px 8px 8px 8px;
+}
+
+.select {
+  border: solid 3px red;
+  font-size: 25px;
+  margin: 10px 10px 10px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+}

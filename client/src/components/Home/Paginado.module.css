@@ -1,0 +1,38 @@
+.div_principal {
+  display: flex;
+  border: solid 2px blue;
+  padding: 5px;
+}
+
+.nav {
+  border: solid 2px red;
+  padding: 5px;
+  display: flex;
+}
+
+.ul {
+  border: solid 2px green;
+  display: flex;
+  padding: 5px;
+  margin: 3px;
+}
+
+.div_number {
+  border: solid 3px yellow;
+  font-size: 30px;
+  border-radius: 8px;
+  margin: 5px;
+  cursor: pointer;
+}
+
+.div_prev {
+  border: solid 3px purple;
+  display: flex;
+  cursor: pointer;
+}
+
+.div_next {
+  border: solid 3px orange;
+  display: flex;
+  cursor: pointer;
+}

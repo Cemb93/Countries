@@ -1,0 +1,64 @@
+.div_principal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: solid 2px blue;
+  height: 150vh;
+  font-size: 55px;
+  background-image: url('../../images/Create_Activity.jpg');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.div_form {
+  display: flex;
+  border: solid 2px orange;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 20px 10px 20px;
+}
+
+.div_label {
+  border: solid 2px purple;
+  display: flex;
+  padding: 10px 20px 10px 20px;
+  margin: 10px 10px 10px 10px;
+  color: yellow;
+}
+
+.div_input {
+  border: solid 2px green;
+  border-radius: 8px;
+  font-size: 40px;
+  margin: 10px 20px 10px 20px;
+}
+
+.div_select {
+  border: solid 2px green;
+  border-radius: 8px;
+  font-size: 40px;
+  margin: 10px 20px 10px 20px;
+  cursor: pointer;
+}
+
+.div_errors {
+  color: red;
+  font-size: 40px;
+  border-radius: 8px;
+  padding: 5px 15px 10px 15px;
+}
+
+.div_text {
+  color: red
+}
+
+.btn {
+  border: solid 4px aqua;
+  border-radius: 8px;
+  font-size: 40px;
+  margin: 0px 20px 20px 20px;
+  cursor: pointer;
+}

@@ -1,0 +1,21 @@
+.div_principal {
+  border: solid 4px green;
+  display: flex;
+  align-items: center;
+  padding: 10px 10px 10px 10px;
+}
+
+.input {
+  border: solid 4px red;
+  font-size: 30px;
+  margin-right: 10px;
+  border-radius: 8px;
+}
+
+.btn {
+  border: solid 4px blue;
+  font-size: 30px;
+  margin-right: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+}

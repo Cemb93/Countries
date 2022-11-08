@@ -1,0 +1,52 @@
+.div_principal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: solid 3px violet;
+  border-radius: 6px;
+  background-image: url('https://cdn1.eldia.com/012021/1611842819640.jpg');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  background-size: cover;
+  font-size: 60px;
+  height: 310vh;
+}
+
+.div_all_activities {
+  display: flex;
+  flex-wrap: wrap;
+  border: solid 2px blue;
+  margin-bottom: 10px;
+  padding-left: 6px;
+  padding-right: 6px;
+}
+
+.div_activity {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: solid 2px green;
+  border-radius: 3px;
+  margin: 16px 8px 16px 8px;/*Arriba, ->, Abajo, <-*/
+  padding: 1px 8px 1px 8px;/*Arriba, ->, Abajo, <-*/
+}
+
+.btn {
+  border: solid 2px green;
+  border-radius: 8px;
+  background-color: red;
+  margin-bottom: 10px;
+  font-size: 45px;
+  cursor: pointer;
+}
+
+.h1_errors {
+  border: solid 4px red;
+  font-size: 100px;
+  background-color: black;
+  color: red;
+  margin-top: 400px;
+  padding: 10px 20px 10px 20px;
+  border-radius: 16px;
+}
