@@ -1,5 +1,4 @@
 .div_principal {
-  border: solid 4px green;
   display: flex;
   align-items: center;
   padding: 10px 10px 10px 10px;
@@ -13,7 +12,8 @@
 }
 
 .btn {
-  border: solid 4px blue;
+  border: solid 4px gray;
+  background:  rgba(66, 202, 171, 0.75);
   font-size: 30px;
   margin-right: 10px;
   border-radius: 8px;

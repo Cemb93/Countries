@@ -24,14 +24,15 @@ export const FormCreate = ({
                 className={s.div_input}
               />
             </div>
-            <div className={s.div_errors}>
-              {!activity.name && (
-                <span>
-                  <strong>{errors.name}</strong>
-                </span>
-              )}
-            </div>
           </div>
+          <div className={s.div_errors}>
+            {!activity.name && (
+              <span>
+                <strong>{errors.name}</strong>
+              </span>
+            )}
+          </div>
+
           <div className={s.div_label}>
             <label>*Dificultad: </label>
             <div>
@@ -48,14 +49,15 @@ export const FormCreate = ({
                 <option value="5">5 - Muy Difícil</option>
               </select>
             </div>
-            <div className={s.div_errors}>
-              {errors.name && !activity.difficulty && (
-                <span>
-                  <strong>{errors.difficulty}</strong>
-                </span>
-              )}
-            </div>
           </div>
+          <div className={s.div_errors}>
+            {errors.name && !activity.difficulty && (
+              <span>
+                <strong>{errors.difficulty}</strong>
+              </span>
+            )}
+          </div>
+
           <div className={s.div_label}>
             <label>*Duración: </label>
             <div>
@@ -72,14 +74,15 @@ export const FormCreate = ({
                 <option value={5}>5 Horas</option>
               </select>
             </div>
-            <div className={s.div_errors}>
-              {errors.name && errors.difficulty && (
-                <span>
-                  <strong>{errors.duration}</strong>
-                </span>
-              )}
-            </div>
           </div>
+          <div className={s.div_errors}>
+            {errors.name && errors.difficulty && (
+              <span>
+                <strong>{errors.duration}</strong>
+              </span>
+            )}
+          </div>
+
           <div className={s.div_label}>
             <label>*Temporada: </label>
             <div>
@@ -95,14 +98,15 @@ export const FormCreate = ({
                 <option value="Primavera">Primavera</option>
               </select>
             </div>
-            <div className={s.div_errors}>
-              {errors.name && errors.difficulty && errors.duration && (
-                <span>
-                  <strong>{errors.season}</strong>
-                </span>
-              )}
-            </div>
           </div>
+          <div className={s.div_errors}>
+            {errors.name && errors.difficulty && errors.duration && (
+              <span>
+                <strong>{errors.season}</strong>
+              </span>
+            )}
+          </div>
+
           <div className={s.div_label}>
             <label>País: </label>
             <div>
@@ -111,7 +115,9 @@ export const FormCreate = ({
                 onChange={(e) => Select_Countries(e)}
                 className={s.div_select}
               >
-                <option>Elige de que País quieres que sea tu Actividad</option>
+                <option>
+                  Elige de que País quieres que sea tu Actividad
+                </option>
                 {list_Countries}
               </select>
               <div>
@@ -138,10 +144,10 @@ export const FormCreate = ({
               errors.season
             ) ? (
               <button type="submit" className={s.btn}>
-                Crear
+                Crear Actividad
               </button>
             ) : (
-              "Llenar los campos requeridos (*), para poder crear la Actividad"
+              "Llena los campos requeridos (*) y escoge al menos un País, para poder crear la Actividad"
             )}
           </div>
         </div>

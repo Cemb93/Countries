@@ -2,42 +2,49 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: solid 3px violet;
-  border-radius: 6px;
-  background-image: url('https://cdn1.eldia.com/012021/1611842819640.jpg');
+  background-image: url('../../images/DETAILS\ -\ COUNTRY.jpg');
   background-repeat: no-repeat;
   background-position: center center;
   background-attachment: fixed;
   background-size: cover;
-  font-size: 60px;
-  height: 310vh;
+  min-height: 100vh;
+}
+
+.div_detail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: solid 4px gray;
+  background: rgba(131, 141, 167, 0.75);
+  border-radius: 16px;
+  margin: 20px 0 20px 0;
+  font-size: 40px
 }
 
 .div_all_activities {
   display: flex;
   flex-wrap: wrap;
-  border: solid 2px blue;
-  margin-bottom: 10px;
-  padding-left: 6px;
-  padding-right: 6px;
+  margin: 0 20px 20px 20px;
 }
 
 .div_activity {
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: solid 2px green;
-  border-radius: 3px;
-  margin: 16px 8px 16px 8px;/*Arriba, ->, Abajo, <-*/
-  padding: 1px 8px 1px 8px;/*Arriba, ->, Abajo, <-*/
+  border: solid 4px green;
+  background: rgba(46, 169, 118, 0.75);
+  border-radius: 16px;
+  margin: 16px 16px 16px 16px;/*Arriba, ->, Abajo, <-*/
+  padding: 0 18px 0 18px;/*Arriba, ->, Abajo, <-*/
 }
 
 .btn {
-  border: solid 2px green;
+  border: solid 2px red;
   border-radius: 8px;
-  background-color: red;
-  margin-bottom: 10px;
-  font-size: 45px;
+  background: rgba(209, 60, 60, 0.75);
+  margin: 0 0 20px 0;
+  padding: 2px 8px 8px 8px;
+  font-size: 35px;
   cursor: pointer;
 }
 

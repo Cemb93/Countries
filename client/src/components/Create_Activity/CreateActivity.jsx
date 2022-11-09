@@ -25,6 +25,7 @@ export const CreateActivity = () => {
     dispatch(get_all_countries());
   }, [dispatch]);
 
+  //! Se evaluan los campos OBLIGATORIOS en caso de ERRORES
   const Handle_Change = (e) => {
     setActivity({
       ...activity,
@@ -76,7 +77,7 @@ export const CreateActivity = () => {
   );
 
   const list_Countries = All_Countries.map((c) => (
-    <option key={c.id} value={c.name}>
+    <option key={c.id} >
       {c.name}
     </option>
   ));
@@ -88,6 +89,13 @@ export const CreateActivity = () => {
         ? activity.nameCountry
         : [...activity.nameCountry, e.target.value],
     });
+    //! Se SETEA para evitar ERRORES cuando se llena campos NO OBLIGATORIOS
+    setErrors(
+      validation({
+        ...activity,
+        [e.target.name]: e.target.value,
+      })
+    );
   };
 
   return (

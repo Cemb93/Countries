@@ -1,24 +1,25 @@
 .div_principal {
-  height: 97vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border: solid 4px purple;
   background-color: black;
 }
 
-.h1 {
+.titles {
   color: red;
   font-size: 150px;
   border: solid 2px yellow;
   padding: 10px 30px 10px 30px;
+  margin: 30px 30px 40px 30px;
   border-radius: 8px;
 }
 
 .btn {
-  color: green;
-  background-color: yellow;
-  font-size: 100px;
+  color: rgb(0, 0, 128);
+  background-color: rgb(255, 0, 47);
+  font-size: 80px;
   border-radius: 8px;
+  cursor: pointer;
 }

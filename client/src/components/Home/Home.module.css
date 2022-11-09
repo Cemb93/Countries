@@ -1,11 +1,10 @@
 .div_princial {
-  height: 260vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border: solid 4px purple;
-  background-image: url('https://m.media-amazon.com/images/I/81T6SF549eL._AC_UF894,1000_QL80_.jpg');
+  min-height: 100vh;
+  background-image: url('../../images/IMG-HOME.jpg');
   background-repeat: no-repeat;
   background-position: center center;
   background-attachment: fixed;
@@ -14,6 +13,7 @@
 
 .btn_Link {
   border: solid 4px blue;
+  background:  rgba(29, 133, 86, 0.75);/** OPACIDAD */
   font-size: 40px;
   border-radius: 8px;
   cursor: pointer;
@@ -21,6 +21,7 @@
 
 .btn_click {
   border: solid 4px violet;
+  background:  rgba(20, 91, 130, 0.75);
   font-size: 40px;
   border-radius: 8px;
   cursor: pointer;
@@ -37,7 +38,6 @@
 }
 
 .div_cards {
-  border: solid 4px green;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;

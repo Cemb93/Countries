@@ -13,11 +13,11 @@ export const Paginado = ({ all_countries, currentPage, setCurrentPage, setCountr
     pages_number.push(i);
   }
   return (
-    <div className={s.div_principal}>
+    <div>
       <nav className={s.nav}>
-        <div className={s.div_prev}>
+        <div className={s.div_prev} >
           {currentPage !== 1 && (
-            <button onClick={() => pagina(currentPage - 1)}>PREV</button>
+            <button onClick={() => pagina(currentPage - 1)} className={s.btn_prev} >PREV</button>
           )}
         </div>
         <ul className={s.ul}>
@@ -31,7 +31,7 @@ export const Paginado = ({ all_countries, currentPage, setCurrentPage, setCountr
         </ul>
         <div className={s.div_next}>
           {currentPage !== 25 && (
-            <button onClick={() => pagina(currentPage + 1)}>NEXT</button>
+            <button onClick={() => pagina(currentPage + 1)} className={s.btn_next} >NEXT</button>
           )}
         </div>
       </nav>

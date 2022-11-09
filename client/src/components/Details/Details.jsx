@@ -18,7 +18,7 @@ export const Details = (props) => {
   return (
     <div className={s.div_principal}>
       {!detail.error ? (
-        <div className={s.div_principal}>
+        <div className={s.div_detail}>
           <p>
             <strong>Código de País: </strong>
             {detail.id}
@@ -59,7 +59,7 @@ export const Details = (props) => {
                   </p>
                   <p>
                     <strong>Dificultad: </strong>
-                    {el.difficulty}
+                    Nivel - {el.difficulty}
                   </p>
                   <p>
                     <strong>Duración: </strong>

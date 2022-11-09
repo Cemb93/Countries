@@ -1,38 +1,50 @@
-.div_principal {
-  display: flex;
-  border: solid 2px blue;
-  padding: 5px;
-}
-
 .nav {
-  border: solid 2px red;
-  padding: 5px;
   display: flex;
 }
 
 .ul {
-  border: solid 2px green;
   display: flex;
-  padding: 5px;
-  margin: 3px;
+  margin: 3px 8px 3px 8px;
+  padding: 5px 5px 5px 5px;
 }
 
 .div_number {
   border: solid 3px yellow;
-  font-size: 30px;
   border-radius: 8px;
-  margin: 5px;
+  background: rgba(146, 163, 50, 0.75);/** OPACIDAD */
+  font-size: 35px;
+  margin: 5px 5px 5px 5px;
   cursor: pointer;
 }
 
 .div_prev {
-  border: solid 3px purple;
   display: flex;
+  padding: 15px 5px 15px 5px;
+}
+
+.btn_prev {
+  border: solid 3px blue;
+  border-radius: 8px;
+  background: rgba(28, 139, 176, 0.665);
+  padding: 2px 5px 0 5px;
+  margin: 6px 0 6px 0;
+  font-size: 20px;
   cursor: pointer;
+  color: blue;
 }
 
 .div_next {
-  border: solid 3px orange;
   display: flex;
+  padding: 15px 5px 15px 5px;
+}
+
+.btn_next {
+  border: solid 3px green;
+  border-radius: 8px;
+  background: rgba(87, 189, 46, 0.665);
+  padding: 2px 5px 0 5px;
+  margin: 6px 0 6px 0;
+  font-size: 20px;
   cursor: pointer;
+  color: green;
 }

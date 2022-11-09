@@ -1,13 +1,13 @@
 .div_principal {
   display: flex;
-  border: solid 3px gray;
   padding: 8px 8px 8px 8px;
 }
 
 .select {
-  border: solid 3px red;
+  border: solid 3px blue;
+  border-radius: 8px;
+  background: rgba(50, 120, 164, 0.75);/** OPACIDAD */
   font-size: 25px;
   margin: 10px 10px 10px 10px;
-  border-radius: 8px;
   cursor: pointer;
 }
