@@ -6,7 +6,7 @@ const get_all_info = async (req, res) => {
   const country_DB = await Country.findAll({
     include: {
       model: Activity,
-      attributes: ['name', 'difficulty', 'duration', 'season'],
+      attributes: ['name', 'like', 'difficulty', 'duration', 'season'],
       through: { attributes: [], },
     }
   })
@@ -18,7 +18,7 @@ const get_all_info = async (req, res) => {
       const country_DB_v2 = await Country.findAll({
         include: {
           model: Activity,
-          attributes: ['name', 'difficulty', 'duration', 'season'],
+          attributes: ['name', 'like', 'difficulty', 'duration', 'season'],
           through: { attributes: [], },
         }
       });

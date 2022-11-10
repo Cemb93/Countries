@@ -34,6 +34,19 @@ export const FormCreate = ({
           </div>
 
           <div className={s.div_label}>
+            <label>Like: </label>
+            <div>
+              <input
+                type="number"
+                name="like"
+                placeholder="Ej: Cambio - PI"
+                onChange={(e) => Handle_Change(e)}
+                className={s.div_input}
+              />
+            </div>
+          </div>
+
+          <div className={s.div_label}>
             <label>*Dificultad: </label>
             <div>
               <select

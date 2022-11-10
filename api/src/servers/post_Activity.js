@@ -1,10 +1,10 @@
 const { Country, Activity } = require('../db');
 
 const post_activity = async (req, res) => {
-  const { name, duration, difficulty, season, nameCountry } = req.body;
+  const { name, like, duration, difficulty, season, nameCountry } = req.body;
 
   try {
-    let new_activity = await Activity.create({ name, difficulty, duration, season, });
+    let new_activity = await Activity.create({ name, like, difficulty, duration, season, });
 
     let countryDB = await Country.findAll({
       where: {

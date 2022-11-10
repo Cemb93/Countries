@@ -9,6 +9,7 @@ import { useHistory } from "react-router-dom";
 export const CreateActivity = () => {
   const [activity, setActivity] = useState({
     name: "",
+    like: 0,
     difficulty: "",
     duration: "",
     season: "",
@@ -60,6 +61,7 @@ export const CreateActivity = () => {
       //* Seteo TODO desde CERO
       setActivity({
         name: "",
+        like: 0,
         difficulty: "",
         duration: "",
         season: "",
