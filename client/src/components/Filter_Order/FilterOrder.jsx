@@ -17,24 +17,28 @@ export const FilterOrder = ({
   handle_order_population,
 }) => {
 
-  let All_Countries = useSelector((state) => state.copy_all_countries);
+  // let All_Countries = useSelector((state) => state.copy_all_countries);
 
-  let All_Continente = useSelector((state) => state.all_continents);
+  // let All_Continente = useSelector((state) => state.all_continents);
+  let { copy_all_countries, all_continents, all_activities } = useSelector(state => state);
 
   let Continentes = []; //TODO: Aca guardo TODOS los Continentes SIN REPETIR
 
-  let All_Activities = useSelector((state) => state.all_activities);
+  // let All_Activities = useSelector((state) => state.all_activities);
 
   let Actividades = []; //TODO: Aca guardo TODAS las Actividades SIN REPETIR
 
   //TODO:============================================================
-  for (let element of All_Countries) {
-    for (let C of All_Continente) {
+  // for (let element of All_Countries) {
+  for (let element of copy_all_countries) {
+    // for (let C of All_Continente) {
+    for (let C of all_continents) {
       if (element.continents === C) {
         Continentes.push(C);
       }
     }
-    for (let A of All_Activities) {
+    // for (let A of All_Activities) {
+    for (let A of all_activities) {
       for (let el of element.activities) {
         if (el.name === A) {
           Actividades.push(A);

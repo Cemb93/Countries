@@ -77,7 +77,7 @@ export const CREATE_ACTIVITY = 'CREATE_ACTIVITY';
 export const create_activity = (post) => async (dispatch) => {
   try {
     let res = await axios.post(`${URL_ACTIVITIES}`, post);
-    console.log('POST:', res.data)
+    // console.log('POST:', res.data)
     dispatch({
       type: CREATE_ACTIVITY,
       payload: res.data,
