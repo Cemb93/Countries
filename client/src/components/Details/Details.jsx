@@ -1,13 +1,14 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link } from "react-router-dom";
-import { get_detail } from "../../redux/actions";
+import { Link, useHistory } from "react-router-dom";
+import { delete_activity, get_detail } from "../../redux/actions";
 import s from "./Details.module.css";
 
 export const Details = (props) => {
   let { id } = props.match.params;
 
   const dispatch = useDispatch();
+  const history = useHistory();
 
   useEffect(() => {
     dispatch(get_detail(id));
@@ -51,6 +52,7 @@ export const Details = (props) => {
           <h3>Actividad(es) Turística(s):</h3>
           <div className={s.div_all_activities}>
             {detail.activities?.map((el) => {
+              console.log("el:", el);
               return (
                 <div className={s.div_activity}>
                   <p>
@@ -69,6 +71,14 @@ export const Details = (props) => {
                     <strong>Temporada: </strong>
                     {el.season}
                   </p>
+                  <button 
+                    onClick={() => {
+                      dispatch(delete_activity(el.id));
+                      history.go(0);
+                    }}
+                  >
+                    ELIMINAR ACTIVIDAD
+                  </button>
                 </div>
               );
             })}
