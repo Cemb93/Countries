@@ -12,7 +12,6 @@ const delete_activity = async (req, res) => {
       return res.status(200).json({ msg: `La Actividad: ${activity.name}, ha sido eliminada.`})
     }
   } catch (error) {
-    // console.log('ERROR EN DELETE:', error)
     if (error instanceof Error) {
       return res.status(404).json({ error: error.message, });
     }

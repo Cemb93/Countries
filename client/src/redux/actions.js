@@ -90,7 +90,6 @@ export const get_all_activities = () => async (dispatch) => {
 };
 
 export const delete_activity = (id) => async (dispatch) => {
-  console.log('ID ACTIONS:', id)
   try {
     await axios.delete(`${Url_Back.URL_ACTIVITIES}/${id}`);
     return dispatch({
@@ -101,3 +100,15 @@ export const delete_activity = (id) => async (dispatch) => {
     console.log('Error en action delete por:', error);
   }
 };
+
+export const update_activity = (id) => async (dispatch) => {
+  try {
+    await axios.put(`${Url_Back.URL_ACTIVITIES}/${id}`);
+    return dispatch({
+      type: ActionTypes.MODIFY_ACTIVITY,
+      payload: id,
+    });
+  } catch (error) {
+    console.log('Error en action update por:', error);
+  }
+}
