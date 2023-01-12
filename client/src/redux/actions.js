@@ -104,7 +104,7 @@ export const delete_activity = (id) => async (dispatch) => {
 export const update_activity = (activity, id) => async (dispatch) => {
   console.log(activity, 'id:', id)
   try {
-    let { data } = (await axios.put(`${Url_Back.URL_ACTIVITIES}/${id}`));
+    let { data } = (await axios.put(`${Url_Back.URL_ACTIVITIES}/${id}`, activity));
     console.log(data)
     return dispatch(get_all_activities());
   } catch (error) {

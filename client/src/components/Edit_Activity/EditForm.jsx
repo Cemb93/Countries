@@ -145,7 +145,7 @@ export const FormEdit = ({
             </div>
           </div>
           <br />
-          {/* <div className={s.div_text}>
+          <div className={s.div_text}>
             {activity.name &&
             activity.difficulty &&
             activity.duration &&
@@ -156,17 +156,12 @@ export const FormEdit = ({
               errors.duration &&
               errors.season
             ) ? (
-              <button type="submit" className={s.btn}>
+              <button type="submit" onClick={Handle_Submit} className={s.btn}>
                 Editar Actividad
               </button>
             ) : (
               "Llena los campos requeridos (*) y escoge al menos un País, para poder editar la Actividad"
             )}
-          </div> */}
-          <div onClick={Handle_Submit} >
-            <button type="submit" >
-              Editar Actividad
-            </button>
           </div>
         </div>
       </form>
