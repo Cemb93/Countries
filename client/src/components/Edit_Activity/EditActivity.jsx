@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useHistory, useParams } from "react-router-dom";
 import { get_detail, update_activity } from "../../redux/actions";
 
-export const EditActivity = () => {
+const EditActivity = () => {
   const dispatch = useDispatch();
   const { id } = useParams();
   const history = useHistory();
@@ -23,7 +23,7 @@ export const EditActivity = () => {
   // const [errors, setErrors] = useState({});
 
   const handleChange = (e) => {
-    setInput({
+    setActivity({
       ...activity,
       [e.target.name]: e.target.value,
     });
@@ -52,7 +52,7 @@ export const EditActivity = () => {
     // }
     dispatch(update_activity(id));
     setTimeout(() => {
-      setInput(initialState);
+      setActivity(activity);
       history.push("/home");
       history.go(0);
     }, "3000");
@@ -143,7 +143,6 @@ export const EditActivity = () => {
           <select
             name="nameCountry"
             onChange={(e) => Select_Countries(e)}
-            className={s.div_select}
           >
             <option>Elige de que País quieres que sea tu Actividad</option>
             {list_Countries}

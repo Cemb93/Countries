@@ -1,7 +1,8 @@
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { CreateActivity } from './components/Create_Activity/CreateActivity';
 import { Details } from './components/Details/Details';
-import { EditActivity } from './components/Edit_Activity/EditActivity';
+// import { EditActivity } from './components/Edit_Activity/EditActivity';
+import { EditActivity } from './components/Edit_Activity/DemoEdit';
 import { Home } from './components/Home/Home';
 import { LandingPages } from './components/Landing_Pages/LandingPages';
 import { PageNotFound } from './Page/PageNotFound';

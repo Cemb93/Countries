@@ -78,6 +78,7 @@ export const Details = (props) => {
                   >
                     ELIMINAR ACTIVIDAD
                   </button>
+                  <Link to={'/edit-activity'} >Editar Actividad</Link>
                 </div>
               );
             })}
