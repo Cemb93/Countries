@@ -8,17 +8,32 @@
   background-attachment: fixed;
   background-size: cover;
   min-height: 100vh;
+  margin: -0.25%;
 }
 
 .div_detail {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
+  grid-template-rows: 95% 5%;
   align-items: center;
   border: solid 4px gray;
   background: rgba(131, 141, 167, 0.75);
   border-radius: 16px;
-  margin: 20px 0 20px 0;
+  padding: 2.5rem;
+  margin: 5rem;
   font-size: 40px
+}
+
+.div_date_country {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.div_each_activity {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .div_all_activities {
@@ -38,13 +53,23 @@
   padding: 0 18px 0 18px;/*Arriba, ->, Abajo, <-*/
 }
 
+.btn_delete {
+  border: solid 0.1em red;
+  border-radius: 0.25em;
+  font-size: 0.8em;
+  background: rgba(178, 55, 55, 0.73);
+  margin: 1em;
+  padding: 0.1em 0.25em 0.1em 0.25em;
+  cursor: pointer;
+}
+
 .btn {
-  border: solid 2px red;
+  border: solid 0.1em rgb(0, 204, 255);
   border-radius: 8px;
-  background: rgba(209, 60, 60, 0.75);
-  margin: 0 0 20px 0;
-  padding: 2px 8px 8px 8px;
-  font-size: 35px;
+  background: rgba(60, 182, 209, 0.75);
+  margin: 0 0 0.5em 15em;
+  padding: 0.1em 0.25em 0.1em 0.25em;
+  font-size: 1em;
   cursor: pointer;
 }
 
