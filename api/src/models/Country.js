@@ -21,7 +21,8 @@ module.exports = (sequelize) => {
       allowNull: false,
     },
     capital:{
-      type: DataTypes.ARRAY(DataTypes.STRING),
+      // type: DataTypes.ARRAY(DataTypes.STRING),
+      type: DataTypes.STRING,
       allowNull: false,
     },
     subregion:{
