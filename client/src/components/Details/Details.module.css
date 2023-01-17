@@ -44,7 +44,7 @@
 
 .div_activity {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   border: solid 4px green;
   background: rgba(46, 169, 118, 0.75);

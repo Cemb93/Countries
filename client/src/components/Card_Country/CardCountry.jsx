@@ -12,7 +12,7 @@ export const CardCountry = ({
 }) => {
   return (
     <div className={s.div_principal}>
-      <h3>País: {name}</h3>
+      <h3>{name}</h3>
       <Link to={`/countries/${id}`}>
         <img src={flags} alt="Img Not Found" width={"250px"} height={"200"} />
       </Link>
@@ -25,7 +25,7 @@ export const CardCountry = ({
       </p>
       <p>
         <strong>Actividades: </strong>
-        {activities?.map((el) => ` ${el.name}, `)}
+        {!activities.length ? 'Sin actividad(es)' : activities?.map((el) => ` ${el.name}, `)}
       </p>
     </div>
   );

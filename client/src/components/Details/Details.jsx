@@ -51,6 +51,7 @@ export const Details = (props) => {
             <h3>Actividad(es) Turística(s):</h3>
             <div className={s.div_all_activities}>
               {detail.activities?.map((el) => {
+                console.log(el)
                 return (
                   <div className={s.div_activity}>
                     <p>
