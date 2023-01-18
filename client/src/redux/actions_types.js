@@ -12,7 +12,7 @@ export const ActionTypes = {
   MODIFY_ACTIVITY: 'MODIFY_ACTIVITY',
 }
 
-export const Url_Back = {
-  URL_COUNTRIES: 'http://localhost:3001/countries',
-  URL_ACTIVITIES: 'http://localhost:3001/activities',
+export const Back = {
+  countries: '/countries',
+  activities: '/activities',
 }

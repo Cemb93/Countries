@@ -1,9 +1,9 @@
 import axios from "axios";
-import { ActionTypes, Url_Back } from "./actions_types";
+import { ActionTypes, Back } from "./actions_types";
 
 export const get_all_countries = () => async (dispatch) => {
   try {
-    let res = await axios(Url_Back.URL_COUNTRIES);
+    let res = await axios(Back.countries);
     dispatch({
       type: ActionTypes.GET_ALL_COUNTRIES,
       payload: res.data,
@@ -15,7 +15,7 @@ export const get_all_countries = () => async (dispatch) => {
 
 export const search_country = (name) => async (dispatch) => {
   try {
-    let res = await axios(`${Url_Back.URL_COUNTRIES}?name=${name}`);
+    let res = await axios(`${Back.countries}?name=${name}`);
     dispatch({
       type: ActionTypes.SEARCH_COUNTRY,
       payload: res.data,
@@ -55,7 +55,7 @@ export const order_BY_population = (value) => {
 
 export const get_detail = (id) => async (dispatch) => {
   try {
-    let res = await axios(`${Url_Back.URL_COUNTRIES}/${id}`);
+    let res = await axios(`${Back.countries}/${id}`);
     dispatch({
       type: ActionTypes.GET_DETAIL,
       payload: res.data,
@@ -67,7 +67,7 @@ export const get_detail = (id) => async (dispatch) => {
 
 export const create_activity = (post) => async (dispatch) => {
   try {
-    let res = await axios.post(`${Url_Back.URL_ACTIVITIES}`, post);
+    let res = await axios.post(`${Back.activities}`, post);
     dispatch({
       type: ActionTypes.CREATE_ACTIVITY,
       payload: res.data,
@@ -79,7 +79,7 @@ export const create_activity = (post) => async (dispatch) => {
 
 export const get_all_activities = () => async (dispatch) => {
   try {
-    let res = await axios(Url_Back.URL_ACTIVITIES);
+    let res = await axios(Back.activities);
     dispatch({
       type: ActionTypes.GET_ALL_ACTIVITIES,
       payload: res.data,
@@ -91,7 +91,7 @@ export const get_all_activities = () => async (dispatch) => {
 
 export const delete_activity = (id) => async (dispatch) => {
   try {
-    await axios.delete(`${Url_Back.URL_ACTIVITIES}/${id}`);
+    await axios.delete(`${Back.activities}/${id}`);
     return dispatch({
       type: ActionTypes.DELETE_ACTIVITY,
       payload: id,
@@ -104,7 +104,7 @@ export const delete_activity = (id) => async (dispatch) => {
 export const update_activity = (activity, id) => async (dispatch) => {
   // console.log(activity, 'id:', id)
   try {
-    let { data } = (await axios.put(`${Url_Back.URL_ACTIVITIES}/${id}`, activity));
+    let { data } = (await axios.put(`${Back.activities}/${id}`, activity));
     console.log(data)
     return dispatch(get_all_activities());
   } catch (error) {
