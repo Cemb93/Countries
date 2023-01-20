@@ -11,8 +11,3 @@ export const ActionTypes = {
   DELETE_ACTIVITY: 'DELETE_ACTIVITY',
   MODIFY_ACTIVITY: 'MODIFY_ACTIVITY',
 }
-
-export const Back = {
-  countries: '/countries',
-  activities: '/activities',
-}

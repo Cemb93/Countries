@@ -1,9 +1,9 @@
 import axios from "axios";
-import { ActionTypes, Back } from "./actions_types";
+import { ActionTypes } from "./actions_types";
 
 export const get_all_countries = () => async (dispatch) => {
   try {
-    let res = await axios(Back.countries);
+    let res = await axios('/countries');
     dispatch({
       type: ActionTypes.GET_ALL_COUNTRIES,
       payload: res.data,
@@ -15,7 +15,7 @@ export const get_all_countries = () => async (dispatch) => {
 
 export const search_country = (name) => async (dispatch) => {
   try {
-    let res = await axios(`${Back.countries}?name=${name}`);
+    let res = await axios(`/countries?name=${name}`);
     dispatch({
       type: ActionTypes.SEARCH_COUNTRY,
       payload: res.data,
@@ -55,7 +55,7 @@ export const order_BY_population = (value) => {
 
 export const get_detail = (id) => async (dispatch) => {
   try {
-    let res = await axios(`${Back.countries}/${id}`);
+    let res = await axios(`/countries/${id}`);
     dispatch({
       type: ActionTypes.GET_DETAIL,
       payload: res.data,
@@ -67,7 +67,7 @@ export const get_detail = (id) => async (dispatch) => {
 
 export const create_activity = (post) => async (dispatch) => {
   try {
-    let res = await axios.post(`${Back.activities}`, post);
+    let res = await axios.post(`/activities`, post);
     dispatch({
       type: ActionTypes.CREATE_ACTIVITY,
       payload: res.data,
@@ -79,7 +79,7 @@ export const create_activity = (post) => async (dispatch) => {
 
 export const get_all_activities = () => async (dispatch) => {
   try {
-    let res = await axios(Back.activities);
+    let res = await axios('/activities');
     dispatch({
       type: ActionTypes.GET_ALL_ACTIVITIES,
       payload: res.data,
@@ -91,7 +91,7 @@ export const get_all_activities = () => async (dispatch) => {
 
 export const delete_activity = (id) => async (dispatch) => {
   try {
-    await axios.delete(`${Back.activities}/${id}`);
+    await axios.delete(`/activities/${id}`);
     return dispatch({
       type: ActionTypes.DELETE_ACTIVITY,
       payload: id,
@@ -104,7 +104,7 @@ export const delete_activity = (id) => async (dispatch) => {
 export const update_activity = (activity, id) => async (dispatch) => {
   // console.log(activity, 'id:', id)
   try {
-    let { data } = (await axios.put(`${Back.activities}/${id}`, activity));
+    let { data } = (await axios.put(`/activities/${id}`, activity));
     console.log(data)
     return dispatch(get_all_activities());
   } catch (error) {
