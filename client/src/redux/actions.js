@@ -91,9 +91,11 @@ export const get_all_activities = () => async (dispatch) => {
 
 export const delete_activity = (id) => async (dispatch) => {
   try {
-    await axios.delete(`/activities/${id}`);
+    const { data } = (await axios.delete(`/activities/${id}`));
+    dispatch(get_all_activities())
     return dispatch({
       type: ActionTypes.DELETE_ACTIVITY,
+      payload: data,
     });
   } catch (error) {
     console.log('Error en action delete por:', error);

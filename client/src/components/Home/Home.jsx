@@ -76,6 +76,9 @@ export const Home = () => {
       <Link to={"/create-activity"}>
         <button className={s.btn_Link}>Crea una Actividad</button>
       </Link>
+      <Link to={"/activities"}>
+        <button className={s.btn_Link}>Ver todas las actividades</button>
+      </Link>
       <br />
       <button onClick={(e) => handle_click(e)} className={s.btn_click}>
         GET ALL COUNTRIES

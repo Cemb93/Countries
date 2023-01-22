@@ -12,6 +12,8 @@ const initial_state = {
   detail: {},
   all_continents: [],
   all_activities: [],
+  activities: [],
+  removeActivity: '',
 };
 
 export const reducer = (state = initial_state, action) => {
@@ -128,11 +130,12 @@ export const reducer = (state = initial_state, action) => {
     case ActionTypes.GET_ALL_ACTIVITIES:
       return {
         ...state,
-        all_activities: action.payload,
+        activities: action.payload,
       };
     case ActionTypes.DELETE_ACTIVITY:
       return {
         ...state,
+        removeActivity: action.payload,
       }
     default:
       return state;
