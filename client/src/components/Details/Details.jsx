@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useHistory } from "react-router-dom";
 import { delete_activity, get_detail } from "../../redux/actions";
+import { Activities } from "./Activities";
 import s from "./Details.module.css";
 
 export const Details = (props) => {
@@ -14,7 +15,13 @@ export const Details = (props) => {
     dispatch(get_detail(id));
   }, [dispatch, id]);
 
-  let detail = useSelector((state) => state.detail);
+  let { detail } = useSelector((state) => state);
+
+  const handleClick = (id, name) => {
+    dispatch(delete_activity(id));
+    alert(`La Actividad: ${name.toUpperCase()}, fue eliminada`);
+    history.push('/home');
+  }
 
   return (
     <div className={s.div_principal}>
@@ -50,39 +57,21 @@ export const Details = (props) => {
           <div className={s.div_each_activity} >
             <h3>Actividad(es) Turística(s):</h3>
             <div className={s.div_all_activities}>
-              {detail.activities?.map((el) => {
-                console.log(el)
-                return (
-                  <div className={s.div_activity}>
-                    <p>
-                      <strong>Nombre de la Actividad: </strong>
-                      {el.name}
-                    </p>
-                    <p>
-                      <strong>Dificultad: </strong>
-                      Nivel - {el.difficulty}
-                    </p>
-                    <p>
-                      <strong>Duración: </strong>
-                      {el.duration} hora(s)
-                    </p>
-                    <p>
-                      <strong>Temporada: </strong>
-                      {el.season}
-                    </p>
-                    <button
-                      className={s.btn_delete}
-                      onClick={() => {
-                        dispatch(delete_activity(el.id));
-                        history.go(0);
-                      }}
-                    >
-                      ELIMINAR ACTIVIDAD
-                    </button>
-                    {/* <Link to={`/edit-activity/${el.id}`} >Editar Actividad</Link> */}
-                  </div>
-                );
-              })}
+              {
+                detail.activities?.map(el => {
+                  return(
+                    <Activities
+                      key={el.id}
+                      id={el.id}
+                      name={el.name}
+                      difficulty={el.difficulty}
+                      duration={el.duration}
+                      season={el.season}
+                      handleClick={handleClick}
+                    />
+                  );
+                })
+              }
             </div>
           </div>
           <Link to={"/home"}>

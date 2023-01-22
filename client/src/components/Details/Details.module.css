@@ -12,22 +12,21 @@
 }
 
 .div_detail {
-  display: grid;
-  grid-template-columns: repeat(2, 50%);
-  grid-template-rows: 95% 5%;
+  display: flex;
+  flex-direction: row;
   align-items: center;
-  border: solid 4px gray;
+  border: solid 0.2rem gray;
   background: rgba(131, 141, 167, 0.75);
-  border-radius: 16px;
+  border-radius: 1rem;
   padding: 2.5rem;
   margin: 5rem;
-  font-size: 40px
 }
 
 .div_date_country {
   display: flex;
   flex-direction: column;
   align-items: center;
+  font-size: 1.5rem;
 }
 
 .div_each_activity {
@@ -38,19 +37,23 @@
 
 .div_all_activities {
   display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
-  margin: 0 20px 20px 20px;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: 1.05rem;
+  margin: 0.3rem;
 }
 
 .div_activity {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   border: solid 4px green;
   background: rgba(46, 169, 118, 0.75);
-  border-radius: 16px;
-  margin: 16px 16px 16px 16px;/*Arriba, ->, Abajo, <-*/
-  padding: 0 18px 0 18px;/*Arriba, ->, Abajo, <-*/
+  border-radius: 1rem;
+  margin: 1rem;
+  padding: 0 1.1rem;
 }
 
 .btn_delete {
@@ -65,20 +68,19 @@
 
 .btn {
   border: solid 0.1em rgb(0, 204, 255);
-  border-radius: 8px;
+  border-radius: 0.5rem;
   background: rgba(60, 182, 209, 0.75);
-  margin: 0 0 0.5em 15em;
   padding: 0.1em 0.25em 0.1em 0.25em;
-  font-size: 1em;
+  font-size: 1.5em;
   cursor: pointer;
 }
 
 .h1_errors {
-  border: solid 4px red;
-  font-size: 100px;
+  border: solid 0.3rem red;
+  font-size: 6.5rem;
   background-color: black;
   color: red;
-  margin-top: 400px;
-  padding: 10px 20px 10px 20px;
-  border-radius: 16px;
+  margin-top: 30rem;
+  padding: 0.5rem 1.5rem;
+  border-radius: 1rem;
 }
