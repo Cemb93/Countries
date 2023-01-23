@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useHistory } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { delete_activity, get_all_activities } from "../../redux/actions";
 import s from "./Activities.module.css";
 
@@ -47,12 +47,17 @@ export const All_Activities = () => {
                   <b>Temporada: </b>
                   {el.season}
                 </p>
-                <button
-                  onClick={() => handleClick(el.id, el.name)}
-                  className={s.btn_delete}
-                >
-                  ELIMINAR
-                </button>
+                <div className={s.btns_changes} >
+                  <button
+                    onClick={() => handleClick(el.id, el.name)}
+                    className={s.btn_delete}
+                  >
+                    ELIMINAR
+                  </button>
+                  <Link to={`/edit-activity/${el.id}`}>
+                    <button className={s.btn_Link} >Editar</button>
+                  </Link>
+                </div>
               </div>
             </div>
           );

@@ -1,10 +1,4 @@
-import { ActionTypes } from "./actions_types";
-
-export const ALL = "ALL";
-export const ASCENDENTE = "ASCENDENTE";
-export const DESCENDENTE = "DESCENDENTE";
-export const Mayor_Poblacion = "Mayor_Poblacion";
-export const Menor_Poblacion = "Menor_Poblacion";
+import { ActionTypes, f_o } from "./actions_types";
 
 const initial_state = {
   copy_all_countries: [],
@@ -21,7 +15,7 @@ export const reducer = (state = initial_state, action) => {
     case ActionTypes.GET_ALL_COUNTRIES:
       //! Aca SOLO obtengo los Nombres de los Continentes y poder comparar en el Filtro
       let each_continent =
-        action.payload === ALL
+        action.payload === f_o.ALL
           ? action.payload
           : action.payload.reduce((acc, el) => {
               //* Si NO HAY nada en el "acc" se agrega
@@ -33,7 +27,7 @@ export const reducer = (state = initial_state, action) => {
       // console.log('CADA C - REDUCER:', each_continent)
       //! Aca obtengo SOLO los Nombres de las Actividades y poder comparar en el filtro
       let each_activity =
-        action.payload === ALL
+        action.payload === f_o.ALL
           ? action.payload
           : action.payload.reduce((acc, el) => {
               for (let prop in el) {
@@ -63,7 +57,7 @@ export const reducer = (state = initial_state, action) => {
     case ActionTypes.FILTER_BY_CONTINENTS: //* FUNCIONA
       let Continentes = state.copy_all_countries;
       let filter_Continents = 
-        action.payload === ALL
+        action.payload === f_o.ALL
           ? Continentes
           : Continentes.filter(el => el.continents === action.payload);
       // console.log('DESPUES DEL FILTRO C:', filter_Continents)
@@ -81,7 +75,7 @@ export const reducer = (state = initial_state, action) => {
           }
         }
       }
-      filter_Activities = action.payload === ALL ? Actividades : filter_Activities;
+      filter_Activities = action.payload === f_o.ALL ? Actividades : filter_Activities;
       // console.log('DESPUES DEL FILTRO A:', filter_Activities)
       return {
         ...state,
@@ -90,7 +84,7 @@ export const reducer = (state = initial_state, action) => {
     case ActionTypes.ORDER_BY_NAME: //* FUNCIONA
       let all_name = state.copy_all_countries;
       let order_name =
-        action.payload === ASCENDENTE
+        action.payload === f_o.ASCENDENTE
           ? all_name.sort((a, b) => {
               if (a.name.toLowerCase() > b.name.toLowerCase()) return 1;
               if (a.name.toLowerCase() < b.name.toLowerCase()) return -1;
@@ -109,7 +103,7 @@ export const reducer = (state = initial_state, action) => {
     case ActionTypes.ORDER_BY_POPULATION: //* FUNCIONA
       let order_population = state.copy_all_countries;
       order_population = order_population.sort((a, b) => {
-        if (action.payload === Mayor_Poblacion)
+        if (action.payload === f_o.Mayor_Poblacion)
           return b.population - a.population;
         return a.population - b.population;
       });

@@ -4,9 +4,9 @@ import s from "./Edit.module.css";
 export const FormEdit = ({
   Handle_Change,
   Handle_Submit,
-  list_Countries,
+  // list_Countries,
   errors,
-  Select_Countries,
+  // Select_Countries,
   activity,
 }) => {
   return (
@@ -120,7 +120,7 @@ export const FormEdit = ({
             )}
           </div>
 
-          <div className={s.div_label}>
+          {/* <div className={s.div_label}>
             <label>País: </label>
             <div>
               <select
@@ -143,7 +143,7 @@ export const FormEdit = ({
                 })}
               </div>
             </div>
-          </div>
+          </div> */}
           <br />
           <div className={s.div_text}>
             {activity.name &&
@@ -160,7 +160,7 @@ export const FormEdit = ({
                 Editar Actividad
               </button>
             ) : (
-              "Llena los campos requeridos (*) y escoge al menos un País, para poder editar la Actividad"
+              "Llena los campos requeridos (*) para poder editar la Actividad"
             )}
           </div>
         </div>

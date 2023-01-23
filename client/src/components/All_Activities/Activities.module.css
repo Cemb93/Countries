@@ -16,6 +16,7 @@
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  flex-wrap: wrap;
 }
 
 .activity {
@@ -29,6 +30,12 @@
   padding: 0 1.1rem;
 }
 
+.btns_changes {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
 .btn_delete {
   border: solid 0.1em red;
   border-radius: 0.25em;
@@ -37,6 +44,15 @@
   margin: 1em;
   padding: 0.1em 0.25em 0.1em 0.25em;
   cursor: pointer;
+}
+
+.btn_Link {
+  border: solid .1em blue;
+  background:  rgba(29, 116, 133, 0.75);/** OPACIDAD */
+  font-size: 0.85em;
+  border-radius: 0.25em;
+  cursor: pointer;
+  margin: 1em;
 }
 
 .btn_return {

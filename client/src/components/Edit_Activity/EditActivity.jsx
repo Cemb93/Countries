@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { update_activity, get_all_countries } from "../../redux/actions";
+import { useDispatch } from "react-redux";
+import { update_activity } from "../../redux/actions";
 import { validation } from "../Create_Activity/Form_Validate";
 import { FormEdit } from "./EditForm";
 import { useHistory, useParams } from "react-router-dom";
@@ -12,7 +12,7 @@ export const EditActivity = () => {
     difficulty: "",
     duration: "",
     season: "",
-    nameCountry: [],
+    // nameCountry: [],
   }
 
   const [activity, setActivity] = useState(initialState);
@@ -23,9 +23,9 @@ export const EditActivity = () => {
   const { id } = useParams();
   const history = useHistory();
 
-  useEffect(() => {
-    dispatch(get_all_countries());
-  }, [dispatch]);
+  // useEffect(() => {
+  //   dispatch(get_all_countries());
+  // }, [dispatch]);
 
   useEffect(() => {
     setActivity(activity => activity)
@@ -57,54 +57,54 @@ export const EditActivity = () => {
       activity.name &&
       activity.difficulty &&
       activity.duration &&
-      activity.season &&
-      activity.nameCountry.length >= 1
+      activity.season 
+      // activity.nameCountry.length >= 1
     ) {
       dispatch(update_activity(activity, id));
       alert("Has actualizado la Actividad!🤩");
       //* Seteo TODO desde CERO
       setActivity(initialState);
-      history.push("/home");
-      history.go(0);
+      history.push("/activities");
+      // history.go(0);
     }
   };
 
-  let All_Countries = useSelector((state) => state.copy_all_countries).sort(
-    (a, b) => {
-      if (a.name < b.name) return -1;
-      return 0;
-    }
-  );
+  // let All_Countries = useSelector((state) => state.copy_all_countries).sort(
+  //   (a, b) => {
+  //     if (a.name < b.name) return -1;
+  //     return 0;
+  //   }
+  // );
 
-  const list_Countries = All_Countries.map((c) => (
-    <option key={c.id} >
-      {c.name}
-    </option>
-  ));
+  // const list_Countries = All_Countries.map((c) => (
+  //   <option key={c.id} >
+  //     {c.name}
+  //   </option>
+  // ));
 
-  const Select_Countries = (e) => {
-    setActivity({
-      ...activity,
-      nameCountry: activity.nameCountry.includes(e.target.value)
-        ? activity.nameCountry
-        : [...activity.nameCountry, e.target.value],
-    });
-    //! Se SETEA para evitar ERRORES cuando se llena campos NO OBLIGATORIOS
-    setErrors(
-      validation({
-        ...activity,
-        [e.target.name]: e.target.value,
-      })
-    );
-  };
+  // const Select_Countries = (e) => {
+  //   setActivity({
+  //     ...activity,
+  //     nameCountry: activity.nameCountry.includes(e.target.value)
+  //       ? activity.nameCountry
+  //       : [...activity.nameCountry, e.target.value],
+  //   });
+  //   //! Se SETEA para evitar ERRORES cuando se llena campos NO OBLIGATORIOS
+  //   setErrors(
+  //     validation({
+  //       ...activity,
+  //       [e.target.name]: e.target.value,
+  //     })
+  //   );
+  // };
 
   return (
     <FormEdit
       Handle_Submit={Handle_Submit}
       Handle_Change={Handle_Change}
-      list_Countries={list_Countries}
+      // list_Countries={list_Countries}
       errors={errors}
-      Select_Countries={Select_Countries}
+      // Select_Countries={Select_Countries}
       activity={activity}
     />
   );
