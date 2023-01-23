@@ -9,6 +9,12 @@
   background-position: center center;
   background-attachment: fixed;
   background-size: cover;
+  min-height: 100vh;
+  margin: -0.4%;
+}
+
+.butons {
+  display: flex;
 }
 
 .btn_Link {
@@ -17,6 +23,7 @@
   font-size: 40px;
   border-radius: 8px;
   cursor: pointer;
+  margin: 0.5rem;
 }
 
 .btn_click {
@@ -25,6 +32,7 @@
   font-size: 40px;
   border-radius: 8px;
   cursor: pointer;
+  margin: 0.5rem;
 }
 
 .h2_msg_errors {
