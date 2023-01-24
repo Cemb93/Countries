@@ -1,7 +1,4 @@
-.vercel
-
 node_modules
-build
-
+.gitignore
 package-lock.json
-package.json
+.vercel
