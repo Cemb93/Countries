@@ -25,33 +25,19 @@ export const search_country = (name) => async (dispatch) => {
   }
 };
 
-export const filter_BY_continents = (value) => {
+export const filters = (payload) => {
   return {
-    type: ActionTypes.FILTER_BY_CONTINENTS,
-    payload: value,
-  };
-};
+    type: ActionTypes.FILTERS_VALUE,
+    payload,
+  }
+}
 
-export const filter_BY_activities = (value) => {
+export const order = (payload) => {
   return {
-    type: ActionTypes.FILTER_BY_ACTIVITIES,
-    payload: value,
-  };
-};
-
-export const order_BY_name = (value) => {
-  return {
-    type: ActionTypes.ORDER_BY_NAME,
-    payload: value,
-  };
-};
-
-export const order_BY_population = (value) => {
-  return {
-    type: ActionTypes.ORDER_BY_POPULATION,
-    payload: value,
-  };
-};
+    type: ActionTypes.ORDER_VALUE,
+    payload,
+  }
+}
 
 export const get_detail = (id) => async (dispatch) => {
   try {

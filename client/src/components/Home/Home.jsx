@@ -38,37 +38,8 @@ export const Home = () => {
     dispatch(get_all_countries());
   };
 
-  const handle_filter_continents = (e) => {
-    //* FUNCIONA
-    e.preventDefault();
-    dispatch(filter_BY_continents(e.target.value));
-    setCurrentPage(1);
-    setOrder(e.target.value);
-  };
-
-  const handle_filter_activities = (e) => {
-    //* FUNCIONA
-    e.preventDefault();
-    dispatch(filter_BY_activities(e.target.value));
-    setCurrentPage(1);
-    setOrder(e.target.value);
-  };
-
-  const handle_order_name = (e) => {
-    //* FUNCIONA
-    e.preventDefault();
-    dispatch(order_BY_name(e.target.value));
-    setCurrentPage(1);
-    setOrder(e.target.value);
-  };
-
-  const handle_order_population = (e) => {
-    //* FUNCIONA
-    e.preventDefault();
-    dispatch(order_BY_population(e.target.value));
-    setCurrentPage(1);
-    setOrder(e.target.value);
-  };
+  const [orders, setOrders] = useState({});
+  const [filters, setFilters] = useState({});
 
   return (
     <div className={s.div_princial}>
@@ -89,10 +60,10 @@ export const Home = () => {
       <br />
       <div>
         <FilterOrder
-          handle_filter_continents={handle_filter_continents}
-          handle_filter_activities={handle_filter_activities}
-          handle_order_name={handle_order_name}
-          handle_order_population={handle_order_population}
+          setOrders={setOrders}
+          filters={filters}
+          orders={orders}
+          setFilters={setFilters}
         />
       </div>
       <br />
